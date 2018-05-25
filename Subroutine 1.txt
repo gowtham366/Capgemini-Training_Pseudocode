@@ -1,0 +1,14 @@
+BEGIN
+ DECLARE num1 AS INTEGER
+ DECLARE result1,result2 AS BOOLEAN
+ PROMPT "Enter the first number" AND STORE IN num1
+ PROMPT "Enter the second number" AND STORE IN num2
+ result1 = isPositive(num1)
+ result2 = isPositive(num2)
+ PRINT result1,result2
+ 
+END
+
+BOOLEAN SUB isPositive(INTEGER num)
+	RETURN (num>=0)?TRUE:FALSE
+END SUB

@@ -1,0 +1,11 @@
+Remarks 
+BEGIN
+	DECLARE amount[10] AS INTEGER ARRAY
+	DECLARE totalAmount AS INTEGER
+	FOR index=0 TO 9
+		
+		PROMPT "Enter the Salesman ",index," Amount" amount[index]
+		totalAmount = totalAmount + amount[index]
+	END FOR
+	PRINT "Total Amount:",totalAmount
+END

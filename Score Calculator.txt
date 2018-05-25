@@ -1,0 +1,13 @@
+BEGIN
+DECLARE studentName, rollNo, internalMark, internalPer, externalMark, externalPer, total, score AS NUMBER
+INITIALIZE total = 0
+INITIALIZE internalPer = 30
+INITIALIZE externalPer = 70
+PROMPT "Enter the Student Name" AND STORE IN studentName
+PROMPT "Enter the Roll number" AND STORE IN rollNo
+PROMPT "Enter the Internal Mark" AND STORE IN internalMark
+PROMPT "Enter the External Mark" AND STORE IN externalMark
+CALCULATE
+	total = (internalMark * internalPer / 100) + (externalMark * externalPer/ 100)
+	IF()
+END

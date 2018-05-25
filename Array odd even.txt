@@ -1,0 +1,14 @@
+BEGIN
+DECLARE array[10],odd[10],even[10] AS INTEGER ARRAY
+DECLARE oddPos,evenPos AS INTEGER
+INITIALIZE oddPos = 0,evenPos = 0 
+FOR index=0 to 9
+	IF(array[index] MOD 2 == 0) THEN
+		Accept even[evenPos] = array[index]
+		evenPos = evenPos + 1
+	ELSE
+		Accept odd[oddPos] = array[index]
+		oddPos = oddPos + 1
+	END IF
+END FOR
+END

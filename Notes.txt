@@ -1,0 +1,20 @@
+************
+Program must be LOOSELY COUPLED and HIGHLY COHESION
+
+MVC Architecture
+*****************
+*Presentation Layer
+*Business Layer
+*Database Layer
+
+********
+
+
+SUB ROUTINE
+***********
+DataType SUB <Subroutine name>(DataType var1, DataType var2,....)
+
+Modules
+*******
+Low coupling 
+High COHESION

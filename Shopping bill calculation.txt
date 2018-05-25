@@ -1,0 +1,25 @@
+REMARKS To create a bill calculator for shopping
+BEGIN
+	DECLARE itemCode , name AS STRING 
+	DECLARE quantity, amount AS NUMBER
+	DECLARE items,price,discountPercent,discountRate AS NUMBER
+	INITIALIZE discountRate = 5000
+	INITIALIZE discountPercent = 10
+	WHILE(TRUE)
+		DO
+			PROMPT "Enter the Item Code" AND STORE IN itemCode
+			PROMPT "Enter the Name" AND STORE IN name
+			PROMPT "Enter the Quantity" AND STORE IN quantity
+			PROMPT "Enter the Price" AND STORE IN price
+			CALCULATE
+				amount = amount + quantity * price
+			PROMPT "Enter Y if items remains" AND STORE IN option
+			IF(option != 'Y') THEN
+				exit
+			ENDIF			
+		END WHILE
+		IF(amount > discountRate) THEN
+			amount = amount * discountPercent /100
+		ENDIF
+		PRINT amount
+END

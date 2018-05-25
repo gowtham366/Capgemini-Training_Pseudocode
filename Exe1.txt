@@ -1,0 +1,40 @@
+//Calculating the net electricity bill
+BEGIN
+RECORD electricityBill
+	DECLARE userId,userName AS STRING
+	DECLARE lastMonthMeterReading,currentMonthMeterReading,unitConsumed AS NUMBER
+	DECLARE netAmount AS FLOAT
+END RECORD 
+
+	DISPLAY "Enter the User ID"
+	Accept electricityBill.userId
+	DISPLAY "Enter the User Name"
+	Accept electricityBill.userName
+	DISPLAY "Enter the Last month meter reading"
+	Accept electricityBill.lastMonthMeterReading
+	DISPLAY "Enter the Current month meter reading"
+	Accept electricityBill.currentMonthMeterReading
+	
+	EXCEPTIONBLOCK
+		if(currentMonthMeterReading>=lastMonthMeterReading)
+			unitConsumed = lastMonthMeterReading - currentMonthMeterReading
+			electricityBill.netAmount = calculateBill(unitConsumed)
+			DISPLAY "User ID:",electricityBill.userId
+			DISPLAY "User Name:",electricityBill.userName
+			DISPLAY "Unit Consumed",electricityBill.unitConsumed
+			DISPLAY "Net amount:",electricityBill.netAmount
+		else		
+			RISE invalidReadingException("Invalid Meter Reading")
+	END EXCEPTIONBLOCK
+
+	invalidReadingException(msg)
+		DISPLAY msg
+	END invalidReadingException
+	
+End
+
+FLOAT SUB calculateBill(INTEGER unitConsumed) // calculating electricity bill
+	DECLARE netAmount AS FLOAT
+	netAmount = unitConsumed * 1.15 + 100
+	RETURN netAmount
+END SUB

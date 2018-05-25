@@ -1,0 +1,13 @@
+1.Function which can take a word and return the length of the word
+	INTEGER SUB getWordLength(String word)
+	
+2.Random number
+	INTEGER SUB generateRandomNumber()
+	
+3.list<String> SUB getMeaning(String word)
+
+4.FLOATING SUB getSalary(INTEGER empID)
+
+5.INTEGER SUB getEmployeeCount(String deptID)
+
+	
